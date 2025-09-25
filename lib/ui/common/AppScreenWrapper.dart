@@ -15,7 +15,10 @@ class AppScreenWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(backgroundImagePath)),
+        image: DecorationImage(
+          image: AssetImage(backgroundImagePath),
+          fit: BoxFit.cover,
+        ),
       ),
       child: child,
     );

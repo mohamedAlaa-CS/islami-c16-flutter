@@ -11,7 +11,7 @@ import 'package:islami_c16/ui/home/sebha/SebhaContent.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
 
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -70,21 +70,22 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               backgroundColor: AppColors.gold,
               icon: Image(
+                image: Svg(AppImages.ic_tasbeh),
+                width: 24,
+                height: 24,
+              ),
+              label: "Sebha",
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: AppColors.gold,
+              icon: Image(
                 image: Svg(AppImages.ic_radio),
                 width: 24,
                 height: 24,
               ),
               label: "Radio",
             ),
-            BottomNavigationBarItem(
-              backgroundColor: AppColors.gold,
-              icon: Image(
-                image: Svg(AppImages.ic_tasbeh),
-                width: 24,
-                height: 24,
-              ),
-              label: "Mention",
-            ),
+
             BottomNavigationBarItem(
               backgroundColor: AppColors.gold,
               icon: Image(
@@ -103,8 +104,9 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
     QuranContent(),
     HadethContent(),
-    RadioContent(),
     SebhaContent(),
+    RadioContent(),
+
     Prayercontent(),
   ];
 }

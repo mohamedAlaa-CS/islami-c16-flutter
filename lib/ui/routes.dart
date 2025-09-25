@@ -1,6 +1,7 @@
 enum AppRoutes {
   HomeScreen("home"),
-  ChapterDetails("chapter_details");
+  ChapterDetails("chapter_details"),
+  onBoardingScreen("on_boarding");
 
   final String route;
 

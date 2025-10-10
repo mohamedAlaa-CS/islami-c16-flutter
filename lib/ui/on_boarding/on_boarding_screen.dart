@@ -61,6 +61,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               alignment: Alignment.center,
               children: [
                 Row(
+                  // new commit 
                   children: [
                     Visibility(
                       visible: currentIndex != 0,

@@ -57,6 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
             ),
             Stack(
+              /// text code review tool
               alignment: Alignment.center,
               children: [
                 Row(

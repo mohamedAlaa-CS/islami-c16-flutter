@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_c16/ui/Sura.dart';
+import 'package:islami_c16/ui/Chapter.dart';
 import 'package:islami_c16/ui/chapter_details/verse_item.dart';
 import 'package:islami_c16/ui/common/AppScreenWrapper.dart';
 import 'package:islami_c16/ui/design.dart';
+import 'package:islami_c16/ui/providers/MostRecentProvider.dart';
+import 'package:provider/provider.dart';
 
 // untracked -> default status
 // tracked -> needs to be tracked (save all changes)
@@ -22,7 +24,7 @@ class _ChapterDetailsState extends State<ChapterDetails> {
   @override
   Widget build(BuildContext context) {
     var chapter = ModalRoute.of(context)!.settings.arguments as Chapter;
-
+    saveChapterToLastVisited(chapter);
     if (verses.isEmpty) loadVerses(chapter.chapterIndex); // non blocking
 
     return AppScreenWrapper(
@@ -62,6 +64,12 @@ class _ChapterDetailsState extends State<ChapterDetails> {
         ),
       ),
     );
+  }
+
+  void saveChapterToLastVisited(Chapter chapter) {
+    MostRecentProvider provider = Provider.of<MostRecentProvider>(
+        context, listen: false);
+    provider.saveChapter(chapter);
   }
 
   void loadVerses(int chapterIndex) async {

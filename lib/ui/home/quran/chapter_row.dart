@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
-import 'package:islami_c16/ui/Sura.dart';
+import 'package:islami_c16/ui/Chapter.dart';
 import 'package:islami_c16/ui/design.dart';
 import 'package:islami_c16/ui/routes.dart';
 

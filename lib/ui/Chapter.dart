@@ -360,6 +360,10 @@ class Chapter {
     this.chapterIndex,
   );
 
+  static List<Chapter> chapters = getQuranChapters();
+
+  // memory ->
+  static List<Chapter> visitedChapters = [];
   static List<Chapter> getQuranChapters() {
     List<Chapter> chapters = List.generate(
       114,
